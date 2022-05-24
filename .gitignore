@@ -1,0 +1,9 @@
+*.o
+*.d
+*.a
+*.exe
+*.dSYM
+*.log
+
+.build
+dist
