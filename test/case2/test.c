@@ -6,7 +6,7 @@
 /*   By: Juyeong Maing <jmaing@student.42seoul.kr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 10:58:57 by Juyeong Maing     #+#    #+#             */
-/*   Updated: 2022/06/01 13:11:46 by Juyeong Maing    ###   ########.fr       */
+/*   Updated: 2022/06/01 13:14:27 by Juyeong Maing    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,13 @@ bool	test(t_context *context)
 	t_stringbuilder	*sb;
 	t_err			err;
 
-	printf("\033[1;33m[DEBUG]\033[0m - hello world!\n");
 	fseek(context->stream, 0, SEEK_SET);
 	leak_test_start();
 	sb = new_stringbuilder(context->buffer_size);
 	leak_test_end();
-	err = 0;
+	if (!sb)
+		return (false);
+	err = false;
 	while (!err && fgets(value, BUFFER_SIZE - 1, context->stream))
 	{
 		leak_test_start();
