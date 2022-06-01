@@ -6,7 +6,7 @@
 /*   By: Juyeong Maing <jmaing@student.42seoul.kr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 17:04:36 by Juyeong Maing     #+#    #+#             */
-/*   Updated: 2022/06/01 13:14:39 by Juyeong Maing    ###   ########.fr       */
+/*   Updated: 2022/06/01 15:34:33 by Juyeong Maing    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ int	main(int argc, char **argv)
 	context.stream = fopen(argv[2], "r+");
 	if (!context.stream)
 		return (EXIT_FAILURE);
-	result = leak_test((bool (*)(const void *))test, &context, NULL);
+	result = leak_test((t_leak_test)(&test_append_string), &context, NULL);
+	if (!result)
+		result = leak_test((t_leak_test)(&test_append_char), &context, NULL);
+	if (!result)
+		result = leak_test((t_leak_test)(&test_append), &context, NULL);
 	fclose(context.stream);
 	if (result)
 		return (EXIT_FAILURE);

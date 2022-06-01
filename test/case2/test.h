@@ -6,7 +6,7 @@
 /*   By: Juyeong Maing <jmaing@student.42seoul.kr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 17:05:21 by Juyeong Maing     #+#    #+#             */
-/*   Updated: 2022/06/01 12:32:58 by Juyeong Maing    ###   ########.fr       */
+/*   Updated: 2022/06/01 15:31:36 by Juyeong Maing    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef struct s_context
 	size_t	buffer_size;
 }	t_context;
 
-bool	test(t_context *context);
+bool	test_append_string(t_context *context);
+bool	test_append_char(t_context *context);
+bool	test_append(t_context *context);
 
 #endif
