@@ -6,7 +6,7 @@
 /*   By: Juyeong Maing <jmaing@student.42seoul.kr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 20:59:01 by jmaing            #+#    #+#             */
-/*   Updated: 2022/05/25 02:18:03 by Juyeong Maing    ###   ########.fr       */
+/*   Updated: 2022/06/01 12:43:45 by Juyeong Maing    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	ft_memcpy(void *dest, const void *source, size_t size)
 	}
 }
 
-char	*stringbuilder_to_cstring(t_stringbuilder *self, size_t offset)
+char	*stringbuilder_to_string(t_stringbuilder *self, size_t offset)
 {
 	char *const				result = (char *)malloc(self->length - offset + 1);
 	t_stringbuilder_node	*node;
