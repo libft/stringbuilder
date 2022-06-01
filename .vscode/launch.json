@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug case1",
+      "program": "${workspaceFolder}/test/case1/obj/test_none.exe",
+      "args": [
+        "../data/lines/1-basic.in.txt",
+      ],
+      "cwd": "${workspaceFolder}/test/case2",
+      "preLaunchTask": "Build case1",
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug case2",
+      "program": "${workspaceFolder}/test/case2/test.exe",
+      "args": [
+        "1024",
+        "../data/lines/1-basic.in.txt",
+      ],
+      "cwd": "${workspaceFolder}/test/case2",
+      "preLaunchTask": "Build case2",
+    },
+  ],
+}
